@@ -23,7 +23,7 @@ class DropboxClient {
     this.appId = options.appId || '';
     this.onFiles = options.onFiles;
 
-    let url = Linking.popInitialURL();
+    let url = Linking.getInitialURL();
     if (url) {
      this.processURL({ url });
     }
