@@ -4,7 +4,7 @@ let qs = require('qs');
 let React = require('react-native');
 let {
   NativeModules,
-  LinkingIOS,
+  Linking,
 } = React;
 
 
@@ -23,16 +23,16 @@ class DropboxClient {
     this.appId = options.appId || '';
     this.onFiles = options.onFiles;
 
-    let url = LinkingIOS.popInitialURL();
+    let url = Linking.popInitialURL();
     if (url) {
      this.processURL({ url });
     }
 
-    LinkingIOS.addEventListener('url', this.processURL);
+    Linking.addEventListener('url', this.processURL);
   }
 
   remove () {
-    LinkingIOS.removeEventListener('url', this.processURL);
+    Linking.removeEventListener('url', this.processURL);
   }
 
   openChooser(type) {
@@ -68,7 +68,7 @@ class DropboxClient {
       }
       catch (e){}
     };
-    
+
     if (files && this.onFiles) {
     	this.onFiles(files);
     };

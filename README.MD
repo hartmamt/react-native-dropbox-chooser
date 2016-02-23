@@ -12,7 +12,7 @@ This will only work on Device. This will open up a window prompting you to insta
 
 `npm install react-native-dropbox-chooser --save`
 
-## Sign up 
+## Sign up
 
 You'll need to sign up and get an app key from Dropbox.
 
@@ -29,13 +29,13 @@ You'll see a section where it says "App key" and a series of numbers/letters. We
 
 ## Setup
 
-First off add it to your project. How to link native modules can be found here. [http://facebook.github.io/react-native/docs/linking-libraries-ios.html#content](http://facebook.github.io/react-native/docs/linking-libraries-ios.html#content). 
+First off add it to your project. How to link native modules can be found here. [http://facebook.github.io/react-native/docs/linking-libraries-ios.html#content](http://facebook.github.io/react-native/docs/linking-libraries-ios.html#content).
 
-This will use LinkingIOS so we'll need to add this code to your `AppDelegate.m`
+This will use Linking so we'll need to add this code to your `AppDelegate.m`
 
 At the top of the file you will need to add `#import "RCTLinkingManager.h"`
 
-Should look like 
+Should look like
 
 ```
 #import "AppDelegate.h"
