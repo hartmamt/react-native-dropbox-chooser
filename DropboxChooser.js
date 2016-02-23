@@ -23,10 +23,11 @@ class DropboxClient {
     this.appId = options.appId || '';
     this.onFiles = options.onFiles;
 
-    let url = Linking.getInitialURL();
-    if (url) {
-     this.processURL({ url });
-    }
+    const url = Linking.getInitialURL().then((url) => {
+      if (url) {
+        this.processURL({ url });
+      }
+    })
 
     Linking.addEventListener('url', this.processURL);
   }
