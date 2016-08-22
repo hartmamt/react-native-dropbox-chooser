@@ -1,11 +1,11 @@
 'use strict';
 
 let qs = require('qs');
-let React = require('react-native');
+let ReactNative = require('react-native');
 let {
   NativeModules,
   Linking,
-} = React;
+} = ReactNative;
 
 
 let DropboxManager = NativeModules.DropboxChooser;
